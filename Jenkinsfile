@@ -3,7 +3,7 @@ pipeline {
     environment { 
 
         registry = 'braunsteinshlomi/aspnetcore-realworld-example-app' 
-        registryCredential = 'docker-hub-credentials'         
+        registryCredential = 'artifactory-credentials'         
         dockerImage = ''
         branch_Name = "shlomi"
 
@@ -42,7 +42,7 @@ pipeline {
 
                 script { 
 
-                    docker.withRegistry('https://registry.hub.docker.com', registryCredential) {
+                    docker.withRegistry('http://157.175.64.207:8081', registryCredential) {
                     dockerImage.push()
 
                     }
