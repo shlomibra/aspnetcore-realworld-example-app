@@ -7,6 +7,7 @@ RUN apt-get install -y unzip
 
 WORKDIR /build
 COPY . .
+RUN chmod u+x /usr/local/bin/build.sh
 RUN ./build.sh
 
 #runtime container
