@@ -42,7 +42,7 @@ pipeline {
 
                 script { 
 
-                    docker.withRegistry('http://157.175.64.207:8081', registryCredential) {
+                    docker.withRegistry('157.175.64.207:8081', registryCredential) {
                     dockerImage.push()
 
                     }
