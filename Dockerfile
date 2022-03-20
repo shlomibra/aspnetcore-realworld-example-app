@@ -1,5 +1,5 @@
 #build container
-FROM microsoft/dotnet:2.1.301-sdk as build
+FROM mcr.microsoft.com/dotnet/sdk:2.1 as build
 
 #install unzip for Cake
 RUN apt-get update
@@ -10,7 +10,7 @@ COPY . .
 RUN ./build.sh
 
 #runtime container
-FROM microsoft/dotnet:2.1.1-runtime
+FROM mcr.microsoft.com/dotnet/runtime:2.1
 
 COPY --from=build /build/publish /app
 WORKDIR /app
